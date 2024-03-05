@@ -45,5 +45,5 @@ export const blox = [
   { name: "Spirit", rarity: "mythical", chance: 8 },
   { name: "Dragon", rarity: "mythical", chance: 7 },
   { name: "Leopard", rarity: "mythical", chance: 3 },
-  { name: "Kitsune", rarity: "mythical", chance: 1 },
+  { name: "Kitsune", rarity: "mythical", chance: 81 },
 ] as FruitData[];
