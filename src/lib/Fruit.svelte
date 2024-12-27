@@ -3,7 +3,7 @@
   import { rarityColor } from "./data";
   let { name, rarity, img, percentage }: FruitData & { percentage: string } =
     $props();
-  const src = $derived(img ? `/fruit/${img}` : `/fruit/${name}Fruit.png`);
+  const src = $derived(img ? `/fruit/${img}` : `/fruit/${name}Fruit.webp`);
   const color = $derived(rarityColor[rarity]);
 </script>
 

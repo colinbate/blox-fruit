@@ -42,10 +42,10 @@ export const blox = [
   { name: "Shadow", rarity: "mythical", chance: 12 },
   { name: "Venom", rarity: "mythical", chance: 10 },
   { name: "Control", rarity: "mythical", chance: 15 },
-  { name: "Gas", rarity: "mythical", chance: 8, img: "GasFruit.webp" },
+  { name: "Gas", rarity: "mythical", chance: 8 },
   { name: "Spirit", rarity: "mythical", chance: 8 },
   { name: "Leopard", rarity: "mythical", chance: 5 },
-  { name: "Yeti", rarity: "mythical", chance: 5, img: "YetiFruit.webp" },
+  { name: "Yeti", rarity: "mythical", chance: 5 },
   { name: "Kitsune", rarity: "mythical", chance: 3 },
   {
     name: "Dragon (West)",
