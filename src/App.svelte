@@ -22,7 +22,7 @@
   async function pickFruit() {
     randomFruit = undefined;
     waiting = true;
-    await wait(800);
+    await wait(210);
     count += 1;
     const fruit = weightedRandom(blox, "chance");
     if (fruit && fruit.item) {
