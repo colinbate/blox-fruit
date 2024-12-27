@@ -33,7 +33,7 @@
 </script>
 
 <ModeSwitcher />
-<main class="p-4 mx-auto text-center max-w-xl">
+<main class="p-4 mx-auto text-center max-w-2xl">
   <h1 class="uppercase text-6xl leading-normal font-thin text-svelte">
     Blox Fruit Picker!
   </h1>
