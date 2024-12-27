@@ -1,7 +1,7 @@
 import type { OnlyNumber } from "./types";
 
 let values: Uint32Array | undefined;
-const MAX = 32;
+const MAX = 512;
 let count = MAX;
 const LARGEST = 4294967296;
 
@@ -35,6 +35,7 @@ export default function weightedRandom<T, K extends keyof OnlyNumber<T>>(
       return {
         item: items[itemIndex],
         index: itemIndex,
+        maxWeight: maxCumulativeWeight,
       };
     }
   }

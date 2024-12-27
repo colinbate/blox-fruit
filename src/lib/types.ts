@@ -6,4 +6,5 @@ export interface FruitData {
   name: string;
   rarity: "common" | "uncommon" | "rare" | "legendary" | "mythical";
   chance: number;
+  img?: string;
 }
