@@ -34,7 +34,7 @@
 
 <ModeSwitcher />
 <main class="p-4 mx-auto text-center max-w-2xl">
-  <h1 class="uppercase text-6xl leading-normal font-thin text-svelte">
+  <h1 class="uppercase text-3xl sm:text-6xl leading-tight sm:leading-normal font-thin text-svelte">
     Blox Fruit Picker!
   </h1>
   <div class="flex items-center justify-center flex-col gap-6 mt-8">
