@@ -8,9 +8,9 @@
 </script>
 
 <div
-  class="w-max divide-y divide-gray-200 dark:divide-gray-600 overflow-hidden rounded-lg bg-white dark:bg-gray-900 shadow dark:shadow-lg dark:shadow-white/20 border-4 {color}"
+  class=" w-72 divide-y overflow-hidden rounded-lg bg-white dark:bg-gray-900 shadow dark:shadow-lg dark:shadow-white/20 border-4 {color}"
 >
-  <div class="px-4 py-5 sm:p-6">
+  <div class="px-4 py-5 sm:p-6 flex flex-col items-center">
     <img {src} alt={`${name} fruit icon`} width="200" height="200" />
   </div>
   <div

@@ -1,10 +1,10 @@
 import type { FruitData } from "./types";
 export const rarityColor = {
-  common: "border-gray-500",
-  uncommon: "border-blue-600",
-  rare: "border-purple-500",
-  legendary: "border-pink-600",
-  mythical: "border-red-500",
+  common: "border-gray-500 divide-gray-500",
+  uncommon: "border-blue-600 divide-blue-600",
+  rare: "border-purple-500 divide-purple-500",
+  legendary: "border-pink-600 divide-pink-600",
+  mythical: "border-red-500 divide-red-500",
 };
 
 export const blox = [
