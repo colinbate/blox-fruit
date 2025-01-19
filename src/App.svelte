@@ -2,7 +2,7 @@
   import { tick } from "svelte";
   import Fruit from "./lib/Fruit.svelte";
   import ModeSwitcher from "./lib/ModeSwitcher.svelte";
-  import { blox } from "./lib/data";
+  import { blox, battleground } from "./lib/data";
   import weightedRandom from "./lib/random";
   import type { FruitData } from "./lib/types";
 
@@ -11,6 +11,12 @@
     minimumFractionDigits: 2,
   });
 
+  const dataSets = {
+    fruit: blox,
+    battleground,
+  } as const;
+
+  let chosenSet: keyof typeof dataSets | undefined = $state();
   let randomFruit: FruitData | undefined = $state(undefined);
   let percentage: string | undefined = $state();
   let btn: HTMLButtonElement | undefined;
@@ -18,6 +24,7 @@
   let count = $state(0);
   let disabled = $state(false);
   let mythicalTracker: Record<string, number> = $state({});
+  let data = $derived(chosenSet && dataSets[chosenSet]);
 
   $effect(() => btn?.focus());
 
@@ -26,12 +33,12 @@
   }
 
   async function pickFruit() {
-    if (waiting) return;
+    if (waiting || !data) return;
     randomFruit = undefined;
     waiting = true;
     await wait(210);
     count += 1;
-    const fruit = weightedRandom(blox, "chance");
+    const fruit = weightedRandom(data, "chance");
     if (fruit && fruit.item) {
       randomFruit = fruit.item;
       percentage = percentageFmt.format(fruit.item.chance / fruit.maxWeight);
@@ -54,22 +61,41 @@
   <h1
     class="  select-none uppercase text-3xl sm:text-6xl leading-tight sm:leading-normal font-thin text-svelte"
   >
-    Blox Fruit Picker!
+    Fruit Picker!
   </h1>
   <div class="flex items-center justify-center flex-col gap-6 mt-8">
+    {#if !data}
+      <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+        <button
+          onclick={() => (chosenSet = "fruit")}
+          type="button"
+          class={[
+            "rounded-md bg-indigo-600 px-3.5 py-2.5 w-44 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:cursor-not-allowed disabled:opacity-40",
+          ]}>Blox Fruit</button
+        >
+        <button
+          onclick={() => (chosenSet = "battleground")}
+          type="button"
+          class={[
+            "rounded-md bg-indigo-600 px-3.5 py-2.5 w-44 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:cursor-not-allowed disabled:opacity-40",
+          ]}>Fruit Battlegrounds</button
+        >
+      </div>
+    {/if}
     <button
       bind:this={btn}
       onclick={pickFruit}
       {disabled}
       type="button"
       class={[
+        !data && "hidden",
         "rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600 disabled:cursor-not-allowed disabled:opacity-40",
       ]}>Random Fruit</button
     >
     <div class="grid grid-cols-1 sm:grid-cols-2 gap-8">
       <div class="min-h-96">
-        {#if randomFruit && percentage}
-          <Fruit {...randomFruit} {percentage} />
+        {#if randomFruit && percentage && chosenSet}
+          <Fruit {...randomFruit} {percentage} type={chosenSet} />
         {:else if waiting}
           <div class="flex items-center justify-center pt-24 w-72">
             <svg

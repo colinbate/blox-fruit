@@ -1,17 +1,30 @@
 <script lang="ts">
   import type { FruitData } from "./types";
   import { rarityColor } from "./data";
-  let { name, rarity, img, percentage }: FruitData & { percentage: string } =
-    $props();
-  const src = $derived(img ? `/fruit/${img}` : `/fruit/${name}Fruit.webp`);
+  let {
+    name,
+    rarity,
+    img,
+    percentage,
+    type,
+  }: FruitData & { percentage: string; type: string } = $props();
+  const src = $derived(
+    img
+      ? `/${type}/${img}`
+      : type === "fruit"
+        ? `/${type}/${name}Fruit.webp`
+        : `/${type}/${name}.webp`
+  );
   const color = $derived(rarityColor[rarity]);
 </script>
 
 <div
   class=" w-72 divide-y overflow-hidden rounded-lg bg-white dark:bg-gray-900 shadow dark:shadow-lg dark:shadow-white/20 border-4 {color}"
 >
-  <div class="px-4 py-5 sm:p-6 flex flex-col items-center">
-    <img {src} alt={`${name} fruit icon`} width="200" height="200" />
+  <div
+    class="px-4 py-5 sm:p-6 flex flex-col items-center justify-center box-content size-[200px] mx-auto"
+  >
+    <img {src} alt={`${name} fruit icon`} />
   </div>
   <div
     class="px-4 py-4 sm:px-6 flex flex-col gap-2 items-center justify-center"

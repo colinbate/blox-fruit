@@ -4,7 +4,7 @@ export type OnlyNumber<T> = {
 
 export interface FruitData {
   name: string;
-  rarity: "common" | "uncommon" | "rare" | "legendary" | "mythical";
+  rarity: "common" | "uncommon" | "rare" | "epic" | "legendary" | "mythical";
   chance: number;
   img?: string;
 }

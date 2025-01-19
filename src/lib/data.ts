@@ -3,6 +3,7 @@ export const rarityColor = {
   common: "border-gray-500 divide-gray-500",
   uncommon: "border-blue-600 divide-blue-600",
   rare: "border-purple-500 divide-purple-500",
+  epic: "border-orange-500 divide-orange-500",
   legendary: "border-pink-600 divide-pink-600",
   mythical: "border-red-500 divide-red-500",
 };
@@ -61,3 +62,50 @@ export const blox = [
     img: "Dragon_(East)Fruit.webp",
   },
 ] as FruitData[];
+
+export const battleground: FruitData[] = [
+  // Common Fruits
+  { name: "Barrier", rarity: "common", chance: 2110 },
+  { name: "Chop", rarity: "common", chance: 2110 },
+  { name: "Sand", rarity: "common", chance: 2110 },
+  // Uncommon Fruits
+  { name: "Smoke", rarity: "uncommon", chance: 807 },
+  { name: "Rubber", rarity: "uncommon", chance: 605 },
+  { name: "Falcon", rarity: "uncommon", chance: 573 },
+  { name: "Gas", rarity: "uncommon", chance: 595 },
+  // Rare Fruits
+  { name: "Bomb", rarity: "rare", chance: 233 },
+  { name: "Ice", rarity: "rare", chance: 149 },
+  { name: "Darkness", rarity: "rare", chance: 138 },
+  { name: "Ash", rarity: "rare", chance: 104 },
+  // Epic Fruits
+  { name: "Light", rarity: "epic", chance: 106 },
+  { name: "Flame", rarity: "epic", chance: 85 },
+  { name: "Magma", rarity: "epic", chance: 59 },
+  { name: "Paw", rarity: "epic", chance: 76 },
+  { name: "String", rarity: "epic", chance: 68 },
+  { name: "Love", rarity: "epic", chance: 59 },
+  // Legendary Fruits
+  { name: "Quake", rarity: "legendary", chance: 17 },
+  { name: "Gravity", rarity: "legendary", chance: 14 },
+  { name: "Phoenix", rarity: "legendary", chance: 12 },
+  { name: "Dragon", rarity: "legendary", chance: 5 },
+  { name: "TSRubber", rarity: "legendary", chance: 10 },
+  { name: "Magnet", rarity: "legendary", chance: 15 },
+  { name: "IceV2", rarity: "legendary", chance: 14 },
+  { name: "MagmaV2", rarity: "legendary", chance: 14 },
+  { name: "LightV2", rarity: "legendary", chance: 15 },
+  { name: "FlameV2", rarity: "legendary", chance: 14 },
+  { name: "Venom", rarity: "legendary", chance: 7 },
+  { name: "Dough", rarity: "legendary", chance: 10 },
+  // Mythical Fruits
+  { name: "DoughV2", rarity: "mythical", chance: 3 },
+  { name: "Leopard", rarity: "mythical", chance: 2 },
+  { name: "Ope", rarity: "mythical", chance: 2 },
+  { name: "Lightning", rarity: "mythical", chance: 3 },
+  { name: "Nika", rarity: "mythical", chance: 1 },
+  { name: "DragonV2", rarity: "mythical", chance: 1 },
+  { name: "Soul", rarity: "mythical", chance: 1 },
+  { name: "DarkXQuake", rarity: "mythical", chance: 1 },
+  { name: "Okuchi", rarity: "mythical", chance: 1 },
+];
